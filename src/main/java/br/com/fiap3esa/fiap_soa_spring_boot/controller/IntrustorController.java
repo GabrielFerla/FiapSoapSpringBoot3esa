@@ -4,6 +4,7 @@ package br.com.fiap3esa.fiap_soa_spring_boot.controller;
 import br.com.fiap3esa.fiap_soa_spring_boot.instrutor.DadosCadastroInstrutor;
 import br.com.fiap3esa.fiap_soa_spring_boot.instrutor.Instrutor;
 import br.com.fiap3esa.fiap_soa_spring_boot.instrutor.InstrutorRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +20,7 @@ public class IntrustorController {
     InstrutorRepository repository;
 
     @PostMapping
+    @Transactional
     public void cadastrarInstrutor(@RequestBody DadosCadastroInstrutor dados){
 
         System.out.println(dados);
